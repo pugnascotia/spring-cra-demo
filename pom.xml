@@ -71,7 +71,6 @@
 
 					<execution>
 						<id>Frontend production build</id>
-						<phase>package</phase>
 						<goals>
 							<goal>yarn</goal>
 						</goals>
@@ -94,12 +93,12 @@
 				<executions>
 					<execution>
 						<id>Copy frontend production build to resources</id>
-						<phase>package</phase>
+						<phase>generate-resources</phase>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/classes</outputDirectory>
+							<outputDirectory>${basedir}/target/classes/static</outputDirectory>
 							<resources>
 								<resource>
 									<directory>src/main/app/build/</directory>
